@@ -58,7 +58,11 @@ vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Fugitive
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gs", ":Git<CR>")
+vim.keymap.set("n", "<leader>gw", ":Gw<CR>")
+vim.keymap.set("n", "<leader>Gw", ":Gw ")
+vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
+vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
 
 -- Mini
 vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
