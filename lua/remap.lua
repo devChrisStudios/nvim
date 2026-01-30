@@ -6,17 +6,29 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Quality of Life
 vim.keymap.set("i", "jj", "<Esc>")
+
 vim.keymap.set("n", "<leader>w", ":w<CR>") -- Write
 vim.keymap.set("n", "<leader>q", ":q<CR>") -- Quit
 vim.keymap.set("n", "<leader>x", ":x<CR>") -- Quit
+
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y') -- Yank
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p') -- Paste
 vim.keymap.set({'n', 'v'}, '<leader>d', '"_d') -- Delete Without Yank
 vim.keymap.set("n", "<leader>o", ":put =''<CR>") -- Add Line Below
 vim.keymap.set("n", "<leader>O", ":put! =''<CR>") -- Add Line Above
 vim.keymap.set("n", "<leader>j", "yyp") -- Paste Down
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>") -- Substitute Current Word
+vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true }) -- Make File Executable
 
 -- Telescope
 local builtin = require('telescope.builtin')

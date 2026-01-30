@@ -21,26 +21,26 @@ return {
           module = "blink-cmp-copilot",
           score_offset = 100,
           async = true,
-          -- This helps prevent some of the error spam
-          enabled = function()
-            return vim.g.copilot_enabled ~= false
-          end,
         },
       },
     },
     keymap = {
       preset = "none",
+      -- This opens the menu without indenting
+      ["<C-Tab>"] = { "show", "fallback" },
+      
+      -- This is the smart Tab logic
       ["<Tab>"] = {
         function(cmp)
           if cmp.is_menu_visible() then
             return cmp.select_next()
-          else
-            return cmp.show()
           end
         end,
         "fallback",
       },
+      
       ["<S-Tab>"] = { "select_prev", "fallback" },
+      ["<CR>"] = { "accept", "fallback" },
     },
     completion = {
       list = {
