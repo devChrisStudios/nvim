@@ -1,14 +1,38 @@
-
 return {
   "saghen/blink.cmp",
   version = "1.*",
+  dependencies = {
+    "giuxtaposition/blink-cmp-copilot",
+    {
+      "zbirenbaum/copilot.lua",
+      cmd = "Copilot",
+      event = "InsertEnter",
+      config = function()
+        require("copilot").setup({})
+      end,
+    },
+  },
   opts = {
+    sources = {
+      default = { "lsp", "path", "snippets", "buffer", "copilot" },
+      providers = {
+        copilot = {
+          name = "copilot",
+          module = "blink-cmp-copilot",
+          score_offset = 100,
+          async = true,
+          -- This helps prevent some of the error spam
+          enabled = function()
+            return vim.g.copilot_enabled ~= false
+          end,
+        },
+      },
+    },
     keymap = {
       preset = "none",
       ["<Tab>"] = {
         function(cmp)
           if cmp.is_menu_visible() then
-            -- This is the magic: it tells it to select and insert immediately
             return cmp.select_next()
           else
             return cmp.show()
@@ -21,8 +45,8 @@ return {
     completion = {
       list = {
         selection = { 
-          preselect = false, -- We set this to false so the first Tab grabs index 1
-          auto_insert = true -- This makes the text appear as you cycle
+          preselect = false, 
+          auto_insert = true 
         } 
       },
       menu = {
