@@ -61,7 +61,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set("n", "<leader>gs", ":Git<CR>")
 vim.keymap.set("n", "<leader>gw", ":Gw<CR>")
 vim.keymap.set("n", "<leader>Gw", ":Gw ")
-vim.keymap.set("n", "<leader>gc", ":Git commit<CR>")
+vim.keymap.set("n", "<leader>gc", ":Git commit -m ''<Left>")
 vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
 
 -- Mini
