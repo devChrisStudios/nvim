@@ -1,0 +1,54 @@
+
+vim.g.mapleader = " "
+
+-- Explorer Menu
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- Quality of Life
+vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("n", "<leader>w", ":w<CR>") -- Write
+vim.keymap.set("n", "<leader>q", ":q<CR>") -- Quit
+vim.keymap.set("n", "<leader>x", ":x<CR>") -- Quit
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y') -- Yank
+vim.keymap.set({'n', 'v'}, '<leader>p', '"+p') -- Paste
+vim.keymap.set({'n', 'v'}, '<leader>d', '"_d') -- Delete Without Yank
+vim.keymap.set("n", "<leader>o", ":put =''<CR>") -- Add Line Below
+vim.keymap.set("n", "<leader>O", ":put! =''<CR>") -- Add Line Above
+vim.keymap.set("n", "<leader>j", "yyp") -- Paste Down
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
+vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+vim.keymap.set("n", "<leader>ps", function()
+	builtin.grep_string({ search = vim.fn.input("Grep > " ) })
+end)
+
+-- Harpoon
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu)
+
+vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
+
+-- UndoTree
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Fugitive
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
+-- Mini
+vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
+vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
+
