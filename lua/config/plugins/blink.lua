@@ -40,7 +40,6 @@ return {
       },
       
       ["<S-Tab>"] = { "select_prev", "fallback" },
-      ["<CR>"] = { "accept", "fallback" },
     },
     completion = {
       list = {

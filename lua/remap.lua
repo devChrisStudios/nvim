@@ -59,12 +59,8 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Fugitive
 vim.keymap.set("n", "<leader>gs", ":Git<CR>") -- Git Status 
-vim.keymap.set("n", "<leader>gw", ":Gw<CR>") -- Stage File
+vim.keymap.set("n", "<leader>gw", ":Git add --all<CR>") -- Stage File
 vim.keymap.set("n", "<leader>Gw", ":Gw ") -- Stage File (with filename)
 vim.keymap.set("n", "<leader>gc", ":Git commit -m ''<Left>") -- Git Commit
 vim.keymap.set("n", "<leader>gp", ":Git push<CR>") -- Git Push
-
--- Mini
-vim.keymap.set('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true })
-vim.keymap.set('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { expr = true })
 
