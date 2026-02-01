@@ -12,6 +12,7 @@ vim.keymap.set("n", "<leader>q", ":q<CR>") -- Quit
 vim.keymap.set("n", "<leader>x", ":x<CR>") -- Quit
 
 vim.keymap.set("n", "<leader>t", ":vert term<CR>") -- New Terminal Split
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>") -- Exit Terminal Mode
 
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y') -- Yank
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p') -- Paste
