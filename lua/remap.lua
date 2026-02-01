@@ -11,12 +11,15 @@ vim.keymap.set("n", "<leader>w", ":w<CR>") -- Write
 vim.keymap.set("n", "<leader>q", ":q<CR>") -- Quit
 vim.keymap.set("n", "<leader>x", ":x<CR>") -- Quit
 
+vim.keymap.set("n", "<leader>t", ":vert term<CR>") -- New Terminal Split
+
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y') -- Yank
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p') -- Paste
 vim.keymap.set({'n', 'v'}, '<leader>d', '"_d') -- Delete Without Yank
+vim.keymap.set("n", "<leader>j", "yyp") -- Paste Down
+
 vim.keymap.set("n", "<leader>o", ":put =''<CR>") -- Add Line Below
 vim.keymap.set("n", "<leader>O", ":put! =''<CR>") -- Add Line Above
-vim.keymap.set("n", "<leader>j", "yyp") -- Paste Down
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
