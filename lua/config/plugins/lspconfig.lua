@@ -19,7 +19,11 @@ return {
                 },
             },
         })
-        vim.lsp.enable('pyright', 'ruff', 'copilot', 'lua-ls', 'ts_ls', 'html', 'cssls', 'rust_analyzer')
+				require("mason-lspconfig").setup({
+					ensure_installed = { "html", "cssls", "rust_analyzer" },
+					automatic_installation = true,
+					automatic_enable = true,
+				})
   end
 }
 
