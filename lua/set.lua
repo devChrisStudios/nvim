@@ -3,7 +3,7 @@ vim.opt.guicursor = "a:blinkon0"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.colorcolumn = false
+vim.opt.colorcolumn = ""
 
 vim.opt.splitright = true
 
