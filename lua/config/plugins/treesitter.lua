@@ -1,7 +1,9 @@
 
 return {
   "nvim-treesitter/nvim-treesitter",
+	branch = "master",
   build = ":TSUpdate",
+	event = { "BufReadPost", "BufNewFile" },
   opts = {
     highlight = {
       enable = true,
@@ -27,9 +29,10 @@ return {
       "vim",
       "vimdoc",
       "yaml",
+			"rust",
     },
   },
   config = function(_, opts)
-    require("nvim-treesitter").setup(opts)
+		require("nvim-treesitter.configs").setup(opts)
   end,
 }

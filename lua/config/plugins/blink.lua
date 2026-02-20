@@ -38,14 +38,18 @@ return {
 				["<Tab>"] = {
 					function(cmp)
 						if cmp.is_menu_visible() then
-							return cmp.select_next()
+								return cmp.select_next()
 						end
 					end,
 					"fallback",
 				},
 				["<S-Tab>"] = { "select_prev", "fallback" },
+				["<CR>"] = { "accept", "fallback" },
 			},
 			completion = {
+				trigger = {
+					show_on_insert_on_trigger_character = true,
+				},
 				list = {
 					selection = { 
 						preselect = false, 
