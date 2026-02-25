@@ -6,12 +6,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- disable automatic comment on new line
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
-	callback = function ()
-		vim.opt.formatoptions:remove(vim.opt.formatoptions - { "c", "r", "o" })
-	end,
-})
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
 -- highlight text on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
