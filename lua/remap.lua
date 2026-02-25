@@ -9,7 +9,6 @@ vim.keymap.set("i", "jj", "<Esc>")
 
 vim.keymap.set("n", "<leader>w", ":w<CR>") -- Write
 vim.keymap.set("n", "<leader>q", ":q<CR>") -- Quit
-vim.keymap.set("n", "<leader>x", ":x<CR>") -- Quit
 
 vim.keymap.set("n", "<leader>t", ":vert term<CR>") -- New Terminal Split
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>") -- Exit Terminal Mode
